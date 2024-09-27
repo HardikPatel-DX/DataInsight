@@ -14,10 +14,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  # Updated to v3 for Node.js 20 compatibility
+      uses: actions/checkout@v3  # Updated for Node.js 20 compatibility
 
     - name: Set up Python
-      uses: actions/setup-python@v5  # Updated to v5 for Node.js 20 compatibility
+      uses: actions/setup-python@v5  # Updated for Node.js 20 compatibility
       with:
         python-version: '3.x'  # Specify Python version (e.g., 3.8 or 3.x for latest)
 
@@ -28,4 +28,4 @@ jobs:
 
     - name: Run tests
       run: |
-        python -m unittest discover -s tests  # Run unit tests located in the 'tests' folder
+        python -m unittest discover -s ./tests  # Add './' to specify the tests folder explicitly
