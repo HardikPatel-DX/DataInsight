@@ -17,8 +17,15 @@ if uploaded_file is not None:
     # Basic stats
     st.write("Summary Statistics:", df.describe())
 
-    # Correlation heatmap
-    st.write("Correlation Heatmap:")
-    fig, ax = plt.subplots()
-    sns.heatmap(df.corr(), annot=True, ax=ax)
-    st.pyplot(fig)
+    # Filter to numeric columns only
+    numeric_df = df.select_dtypes(include=['float64', 'int64'])
+
+    # Check if there are numeric columns for correlation
+    if numeric_df.empty:
+        st.write("No numeric columns to calculate correlation.")
+    else:
+        # Correlation heatmap
+        st.write("Correlation Heatmap:")
+        fig, ax = plt.subplots()
+        sns.heatmap(numeric_df.corr(), annot=True, ax=ax)
+        st.pyplot(fig)
