@@ -3,7 +3,7 @@ A plug-and-play data analysis tool in Python.
 
 ## Data Insight Plug and Play App
 
-Check out our interactive app for data insights:
+Check out my interactive app for data insights:
 [View the Data Insight Plug and Play App](https://datainsightplugnplay.streamlit.app/?embed_options=dark_theme)
 
 You can also see the code live in action on Streamlit Cloud:
